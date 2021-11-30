@@ -1,0 +1,35 @@
+{
+	"name": "excommunicado",
+	"version": "0.0.1",
+	"main": "./dist/index.js",
+	"scripts": {
+		"start": "node dist/",
+		"build": "tsc",
+		"server:dev": "tsc -w & nodemon dist/",
+		"client:dev": "cd ../client && npm run start",
+		"dev": "concurrently --kill-others-on-fail \"npm run server:dev\" \"npm run client:dev\""
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"express": "^4.17.1",
+		"module-alias": "^2.2.2",
+		"typescript": "^4.5.2"
+	},
+	"devDependencies": {
+		"@types/cors": "^2.8.12",
+		"@types/express": "^4.17.13",
+		"concurrently": "^6.4.0",
+		"dotenv": "^10.0.0",
+		"nodemon": "^2.0.15"
+	},
+	"_moduleAliases": {
+		"@config/": "dist/config/*",
+		"@controllers/": "dist/controllers/*",
+		"@models/": "dist/models/*",
+		"@routes/": "dist/routes/*",
+		"@utils/": "dist/utils/*"
+	}
+}
